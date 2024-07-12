@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { MovieListComponent } from "../app/movie-list/movie-list.component";
+import { ContainerComponent } from "../../src/app/shared/container/container.component";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [MovieListComponent, ContainerComponent, CommonModule],
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.scss",
 })
-export class AppComponent {
-  title = 'movie-app';
-}
+export class AppComponent {}

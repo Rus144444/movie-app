@@ -1,0 +1,25 @@
+<section class="movies">
+  <ul class="movies__list">
+    <app-movie-item
+      *ngFor="let movie of movies"
+      [item]="movie"
+      (addedToFavorites)="onAddToFavorites($event)"
+      (addedToWatchlist)="onAddToWatchlist($event)"
+    >
+    </app-movie-item>
+  </ul>
+</section>
+<section class="movies">
+  <h2>Block-1</h2>
+  <ul class="movies__list">
+    <app-movie-item *ngFor="let movie of favoriteMovies" [item]="movie">
+    </app-movie-item>
+  </ul>
+</section>
+<section class="movies">
+  <h2>Block-2</h2>
+  <ul class="movies__list">
+    <app-movie-item *ngFor="let movie of watchLaterMovies" [item]="movie">
+    </app-movie-item>
+  </ul>
+</section>
