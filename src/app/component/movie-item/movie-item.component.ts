@@ -1,12 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import genreIds from "../../assets/json/genreIds.json";
-import { Movie } from "../models/movie.models";
+import genreIds from "../../../assets/json/genreIds.json";
+import { Movie } from "../../models/movie.models";
+import { MovieTimePipe } from "../../pipes/movie-time.pipe";
+// import { MatCardModule } from "@angular/material/card";
 
 @Component({
   selector: "app-movie-item",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MovieTimePipe],
   templateUrl: "./movie-item.component.html",
   styleUrl: "./movie-item.component.scss",
 })
@@ -15,7 +17,7 @@ export class MovieItemComponent implements OnInit {
   @Output() addedToFavorites: EventEmitter<number> = new EventEmitter<number>();
   @Output() addedToWatchlist: EventEmitter<number> = new EventEmitter<number>();
   baseImageUrl = "https://image.tmdb.org/t/p/original";
-  maxOverviewLength = 178;
+  maxOverviewLength = 170;
   imageUrl!: string;
   genres!: string[];
   shorterDescription!: string;
@@ -24,8 +26,8 @@ export class MovieItemComponent implements OnInit {
   ngOnInit() {
     this.imageUrl = `${this.baseImageUrl}/${this.item.backdrop_path}`;
     this.genres = this.transformGenreIds(genreIds);
-    this.shorterDescription = this.truncateDescription();
     this.rating = this.generateRatingArray();
+    this.shorterDescription = this.truncateDescription();
   }
 
   addToFavorites(id: number) {

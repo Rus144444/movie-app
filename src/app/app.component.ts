@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { MovieListComponent } from "../app/movie-list/movie-list.component";
+import { MovieListComponent } from "./component/movie-list/movie-list.component";
 import { ContainerComponent } from "../../src/app/shared/container/container.component";
 import { CommonModule } from "@angular/common";
 

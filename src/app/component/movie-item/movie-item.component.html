@@ -37,6 +37,10 @@
           </button>
         </li>
       </ul>
+      <div>
+        <h3 class="movie__title">{{ item.title }}</h3>
+        <p class="movie__overview">{{ shorterDescription }}</p>
+      </div>
       <ul class="movie__rating">
         <li
           *ngFor="let item of rating"
@@ -46,8 +50,6 @@
           <img src="assets/svg/star.svg" />
         </li>
       </ul>
-      <h3 class="movie__title">{{ item.title }}</h3>
-      <p class="movie__overview">{{ shorterDescription }}</p>
       <ul class="movie__genres">
         <li *ngFor="let item of genres">{{ item }}</li>
       </ul>

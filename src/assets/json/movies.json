@@ -46,21 +46,5 @@
     "video": false,
     "vote_average": 7.124,
     "vote_count": 1900
-  },
-  {
-    "adult": false,
-    "backdrop_path": "/2KGxQFV9Wp1MshPBf8BuqWUgVAz.jpg",
-    "genre_ids": [28, 10751, 35, 14],
-    "id": 1011985,
-    "original_language": "en",
-    "original_title": "Migration",
-    "overview": "After a migrating duck family alights on their pond with thrilling tales of far-flung places, the Mallard family embarks on a family road trip, from New England, to New York City, to tropical Jamaica.",
-    "popularity": 705.24,
-    "poster_path": "/ldfCF9RhR40mppkzmftxapaHeTo.jpg",
-    "release_date": "2024-03-08T00:00:00",
-    "title": "Migration",
-    "video": false,
-    "vote_average": 7.124,
-    "vote_count": 1900
   }
 ]
