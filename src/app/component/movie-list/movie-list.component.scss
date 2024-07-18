@@ -13,10 +13,12 @@
    }
 
    &__list {
+      list-style: none;
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
       width: calc((364px * 3) + (32px * 2));
       margin: 0 auto;
    }
+
 }

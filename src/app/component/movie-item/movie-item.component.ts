@@ -3,12 +3,24 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import genreIds from "../../../assets/json/genreIds.json";
 import { Movie } from "../../models/movie.models";
 import { MovieTimePipe } from "../../pipes/movie-time.pipe";
-// import { MatCardModule } from "@angular/material/card";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatDividerModule } from "@angular/material/divider";
+import { SvgIconComponent } from "angular-svg-icon";
 
 @Component({
   selector: "app-movie-item",
   standalone: true,
-  imports: [CommonModule, MovieTimePipe],
+  imports: [
+    CommonModule,
+    MovieTimePipe,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    SvgIconComponent,
+  ],
   templateUrl: "./movie-item.component.html",
   styleUrl: "./movie-item.component.scss",
 })
