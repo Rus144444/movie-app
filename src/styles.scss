@@ -1,1 +1,43 @@
+@use '@angular/material' as mat;
+
+// Включаємо загальні стилі Angular Material.
+@include mat.core();
+
+// Визначити темну тему
+$dark-theme: mat.define-dark-theme((color: (primary: mat.define-palette(mat.$pink-palette),
+        accent: mat.define-palette(mat.$blue-grey-palette),
+      ),
+      // До темної теми за замовчуванням включайте лише `typography` і `density`.
+      typography: mat.define-typography-config(),
+      density: 0,
+    ));
+
+// Визначити світлу тему
+$light-theme: mat.define-light-theme((color: (primary: mat.define-palette(mat.$indigo-palette),
+        accent: mat.define-palette(mat.$pink-palette),
+      ),
+    ));
+
+// Застосувати темну тему за замовчуванням
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+
+// Застосовуйте світлу тему лише тоді, коли користувач віддає перевагу світлим темам.
+@media (prefers-color-scheme: light) {
+  // Використовуйте міксини `-color`, щоб застосувати лише стилі кольорів,не застосовуючи їх повторно
+  // типографіка та стилі щільності.
+  @include mat.core-color($light-theme);
+  @include mat.button-color($light-theme);
+}
+
 @import "./styles/base.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

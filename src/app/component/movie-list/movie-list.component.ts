@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import movies from "../../assets/json/movies.json";
 import { MovieItemComponent } from "../movie-item/movie-item.component";
-import { Movie } from "../models/movie.models";
+import { Movie } from "../../models/movie.models";
+import movies from "../../../assets/json/movies.json";
 
 @Component({
   selector: "app-movie-list",
@@ -24,6 +24,7 @@ export class MovieListComponent {
     }
     return list;
   }
+
   onAddToFavorites(id: number) {
     this.favoriteMovies = this.addToList(this.favoriteMovies, id);
   }

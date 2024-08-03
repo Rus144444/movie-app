@@ -1,0 +1,55 @@
+<mat-card class="movie__item">
+  <mat-card-content
+    ><img
+      mat-card-image
+      [src]="imageUrl"
+      [alt]="item.title"
+      class="movie__picture"
+  /></mat-card-content>
+  <mat-card-footer class="movie__information">
+    <mat-card-actions class="movie__actions">
+      <button
+        mat-icon-button
+        type="button"
+        title="Add to Favorites"
+        class="movie__controls-button"
+        (click)="addToFavorites(item.id)"
+      >
+        <img src="assets/svg/heart.svg" />
+      </button>
+      <button
+        mat-icon-button
+        type="button"
+        title="Add to Watchlist"
+        class="movie__controls-button"
+        (click)="addToWatchlist(item.id)"
+      >
+        <img src="assets/svg/add.svg" />
+      </button>
+      <button
+        mat-icon-button
+        type="button"
+        title="Show more Information"
+        class="movie__controls-button"
+      >
+        <img src="assets/svg/information.svg" />
+      </button>
+    </mat-card-actions>
+    <mat-card-content>
+      <h3 class="movie__title">{{ item.title }}</h3>
+      <p class="movie__overview">{{ shorterDescription }}</p>
+    </mat-card-content>
+    <mat-card-content class="movie__rating">
+      <mat-icon
+        *ngFor="let item of rating"
+        class="movie__star"
+        [ngClass]="{ movie__star_filled: item, movie__star_empty: !item }"
+      >
+        <img src="assets/svg/star.svg" />
+      </mat-icon>
+    </mat-card-content>
+    <mat-card-content class="movie__cards">
+      <div class="movie__card" *ngFor="let item of genres">{{ item }}</div>
+    </mat-card-content>
+  </mat-card-footer>
+</mat-card>
