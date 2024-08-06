@@ -1,18 +1,25 @@
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import { MovieItemComponent } from "../movie-item/movie-item.component";
-import { Movie } from "../../models/movie.models";
-import movies from "../../../assets/json/movies.json";
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { MovieItemComponent } from '../movie-item/movie-item.component';
+import { Movie } from '../../models/movie.models';
+import { MovieService } from '../../movie.service';
+import { RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: "app-movie-list",
+  selector: 'app-movie-list',
   standalone: true,
-  imports: [CommonModule, MovieItemComponent],
-  templateUrl: "./movie-list.component.html",
-  styleUrl: "./movie-list.component.scss",
+  imports: [CommonModule, MovieItemComponent, RouterLink, RouterOutlet],
+  templateUrl: './movie-list.component.html',
+  styleUrl: './movie-list.component.scss',
 })
 export class MovieListComponent {
-  movies: Movie[] = movies;
+  movies: Movie[] = [];
+  movieService: MovieService = inject(MovieService);
+  constructor() {
+    this.movies = this.movieService.getAllMovieLocations();
+  }
+
   favoriteMovies: Movie[] = [];
   watchLaterMovies: Movie[] = [];
   private addToList(list: Movie[], id: number) {
