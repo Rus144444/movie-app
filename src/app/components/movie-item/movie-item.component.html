@@ -26,14 +26,13 @@
       >
         <img src="assets/svg/add.svg" />
       </button>
-      <button
-        mat-icon-button
-        type="button"
+      <a
         title="Show more Information"
         class="movie__controls-button"
+        [routerLink]="['/details', item.id]"
       >
         <img src="assets/svg/information.svg" />
-      </button>
+      </a>
     </mat-card-actions>
     <mat-card-content>
       <h3 class="movie__title">{{ item.title }}</h3>

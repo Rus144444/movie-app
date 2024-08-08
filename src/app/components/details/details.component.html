@@ -1,0 +1,14 @@
+<section *ngIf="itemDetail" class="detail">
+  <article class="detail__container">
+    <div class="detail__content">
+      <a (click)="goBack()">
+        <p>Назад</p>
+      </a>
+      <div class="detail__img">
+        <img [src]="imageUrl" [alt]="itemDetail.title" />
+      </div>
+      <h2 class="detail__title">{{ itemDetail.title }}</h2>
+      <p class="detail__text">{{ itemDetail.overview }}</p>
+    </div>
+  </article>
+</section>

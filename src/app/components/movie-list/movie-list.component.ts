@@ -1,15 +1,14 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MovieItemComponent } from '../movie-item/movie-item.component';
 import { Movie } from '../../models/movie.models';
 import { MovieService } from '../../movie.service';
-import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [CommonModule, MovieItemComponent, RouterLink, RouterOutlet],
+  imports: [CommonModule, MovieItemComponent, RouterOutlet],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',
 })

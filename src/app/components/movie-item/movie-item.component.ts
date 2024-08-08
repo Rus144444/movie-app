@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import genreIds from '../../../assets/json/genreIds.json';
+import { genreIds } from '../../constants/genreIds';
 import { Movie } from '../../models/movie.models';
 import { MovieTimePipe } from '../../pipes/movie-time.pipe';
 import { MatCardModule } from '@angular/material/card';
-
-// import { SvgIconComponent } from "angular-svg-icon";
+import { RouterLink } from '@angular/router';
+import { SvgIconComponent } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-movie-item',
   standalone: true,
-  imports: [CommonModule, MovieTimePipe, MatCardModule],
+  imports: [CommonModule, MovieTimePipe, MatCardModule, RouterLink],
   templateUrl: './movie-item.component.html',
   styleUrl: './movie-item.component.scss',
 })

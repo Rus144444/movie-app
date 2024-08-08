@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { MovieListComponent } from './component/movie-list/movie-list.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { ContainerComponent } from '../../src/app/shared/container/container.component';
 import { CommonModule } from '@angular/common';
+// import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { RouterLink } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,7 +14,7 @@ import { RouterLink } from '@angular/router';
     ContainerComponent,
     CommonModule,
     RouterModule,
-    RouterLink,
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

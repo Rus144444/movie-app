@@ -64,7 +64,7 @@ export class MovieService {
     return this.movieLocationList;
   }
 
-  getMovieLocationById(id: number): Movie | undefined {
+  getMovieLocationById(id: number) {
     return this.movieLocationList.find(
       (movieLocation) => movieLocation.id === id
     );
